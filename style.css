@@ -1,0 +1,278 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: black;
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    overflow: hidden;
+}
+/* Animasi balon */
+@keyframes balloonAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Atur properti animasi untuk kelas "animate" */
+.balloon.animate {
+    animation: balloonAnimation 2s ease-in-out infinite; /* Sesuaikan durasi dan iterasi animasi */
+}
+
+/* Animasi ledakan */
+@keyframes explodeAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Atur properti animasi untuk kelas "explode" */
+.balloon.explode {
+    animation: explodeAnimation 0.5s ease-out forwards; /* Sesuaikan durasi dan kurva animasi */
+}
+
+/* Gaya default untuk balon */
+.balloon {
+    font-size: 40px;
+    width: 80px;
+    height: 120px;
+    background-color: #ff6384;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+    /* Posisikan elemen di tengah secara vertikal dan horizontal */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.typewriter {
+    height: 100px;
+}
+
+@keyframes pudarMasuk {
+    to {
+        opacity: 1;
+    }
+}
+
+.typewriter, .typewriter-ungkapan, .wrapper{
+    font-family: 'Indie Flower', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    padding: 15px;
+    
+}
+
+/* Animasi untuk gambar di dalam galeri */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Gaya untuk galeri */
+.gallery {
+    display: none; /* Sembunyikan galeri secara default */
+    justify-content: center;
+}
+
+
+
+/* Gaya untuk setiap gambar dalam galeri */
+.gallery img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Set opacity awal menjadi 0 */
+}
+
+/* Frame styles */
+.frame {
+    width: 80px; /* Ubah lebar frame */
+    height: 80px; /* Ubah tinggi frame */
+    margin: 4px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Image styles */
+.frame img {
+    width: 100%; /* Sesuaikan lebar gambar dengan lebar frame */
+    height: 100%; /* Sesuaikan tinggi gambar dengan tinggi frame */
+    object-fit: cover;
+    display: block;
+    opacity: 0; /* Initially hidden */
+}
+
+.button-animation,.button-animation-next{
+  /* Tambahkan gaya sesuai keinginan Anda */
+  background-color: #ff6384;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-left: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.text-image{
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: space-between;
+    
+}
+
+.text-image button, .text-image-lanjut button, .text-image-end button {
+    display: none;
+    padding: 10px 20px;
+    background-color: #ff6384;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.text-image button:hover, .text-image-lanjut button:hover, .text-image-end button:hover {
+    background-color: #ff4f82;
+    cursor: pointer;
+}
+
+.text-image button {
+    position: absolute;
+    bottom: 0;
+}
+
+.text-image-lanjut button {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+.text-image-end button {
+    position: absolute;
+    bottom: 0;
+}
+
+.text-image-lanjut {
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    top: 25%;
+    display: none;
+    justify-content: space-between;
+}
+
+.text-image-end {
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    position: absolute;
+    top: 60%;
+    display: none;
+    justify-content: space-between;
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.text, .text-lanjut, .text-end {
+    width: 90%;
+    padding: 20px;
+}
+
+.image-container, .image-container-lanjut, .image-container-end {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    padding: 9px;
+    border-radius: 9px;
+    background: linear-gradient(to bottom right, rgba(78, 138, 255, 0.8), rgba(125, 95, 255, 0.8), rgba(125, 95, 255, 0.8), rgba(255, 77, 170, 0.8));
+    animation: slideFromRight 2s forwards, fadeIn 2s forwards;
+}
+
+.image-container img, .image-container-lanjut img, .image-container-end img {
+    width: 100px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+
+/* Gaya untuk gambar anak panah */
+.arrow{
+    position: absolute;
+    bottom: 0;
+    left: -10;
+    transform: translate(-50%, 50%);
+    display: none;
+    width: 200px !important;
+}
+
+.arrow-lanjut{
+    position: absolute;
+    bottom: -60;
+    left: -50;
+    transform: translate(50%, 50%);
+    display: none;
+    width: 200px !important;
+}
+
