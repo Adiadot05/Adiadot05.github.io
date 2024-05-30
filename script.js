@@ -104,7 +104,7 @@ function explodeBalloon() {
         balloon.textContent = currentNumber + 1;
         
         // Periksa apakah angka balon sudah mencapai 18
-        if (currentNumber >= 18) {
+        if (currentNumber >= 19) {
             // Ganti balon menjadi gambar
             convertBalloonToImage();
 
